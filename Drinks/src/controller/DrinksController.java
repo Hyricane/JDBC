@@ -55,6 +55,11 @@ public class DrinksController {
     }
 
     public void delDrinks(String band) throws Exception{
-
+        drinksService = new DrinksServiceImpl();
+        try {
+            drinksService.delDrinks(band);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }
