@@ -44,7 +44,7 @@ public class DrinksDaoImpl extends Dao implements DrinksDao{
     @Override
     public void addDrinks(Drink drink) throws Exception {
         Connection conn = getConnection();
-        String sql = "update t_student set name = ? ,age = ? where no = ?";
+        String sql = "insert into t_drinks VALUES (?,?,?,?,?);";
         PreparedStatement ps = conn.prepareStatement(sql);
         ps.setString(1, drink.getBand());
         ps.setString(2, drink.getOrigin());
@@ -56,13 +56,34 @@ public class DrinksDaoImpl extends Dao implements DrinksDao{
         conn.close();
     }
 
+    /**
+     * 修改
+     * @param drink
+     * @throws Exception
+     */
     @Override
     public void updateDrinks(Drink drink) throws Exception {
-
+        Connection conn = getConnection();
+        String sql = "update t_drinks set cap = ? ,price = ? where band = ?";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setString(1,drink.getCap());
+        ps.setDouble(2,drink.getPrice());
+        ps.setString(3,drink.getBand());
+        ps.executeUpdate();
+        ps.close();
+        conn.close();
     }
 
     @Override
-    public void delDrinks(Drink drink) throws Exception {
-
+    public void delDrinks(String band) throws Exception {
+        Connection conn = getConnection();
+        String sql = "delete from t_drinks where band = ?";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setString(1,band);
+        ps.executeUpdate();
+        ps.close();
+        conn.close();
     }
+
+
 }

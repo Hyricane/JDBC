@@ -30,4 +30,18 @@ public class DrinksServiceImpl implements DrinksService{
         drinksDao = new DrinksDaoImpl();
         drinksDao.addDrinks(drink);
     }
+
+    @Override
+    public void updateDrinks(Drink drink) throws Exception {
+        drinksDao = new DrinksDaoImpl();
+        drinksDao.updateDrinks(drink);
+    }
+
+    @Override
+    public void delDrinks(String band) throws Exception {
+        drinksDao = new DrinksDaoImpl();
+        drinksDao.delDrinks(band);
+    }
+
+
 }

@@ -15,7 +15,6 @@ public class DrinksController {
      * 查询
      * @return
      */
-
     public List<Drink> queryDrinks(){
         drinksService = new DrinksServiceImpl();
         List<Drink> list = new ArrayList<>();
@@ -25,5 +24,37 @@ public class DrinksController {
             System.out.println(e.getMessage());
         }
         return list;
+    }
+
+    /**
+     * 增加
+     * @param drink
+     * @throws Exception
+     */
+    public void addDrinks(Drink drink) throws Exception{
+        drinksService = new DrinksServiceImpl();
+        try{
+            drinksService = new DrinksServiceImpl();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    /**
+     * 修改
+     * @param drink
+     * @throws Exception
+     */
+    public void updateDrinks(Drink drink) throws Exception{
+        drinksService = new DrinksServiceImpl();
+        try{
+            drinksService.updateDrinks(drink);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void delDrinks(String band) throws Exception{
+
     }
 }
