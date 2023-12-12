@@ -74,6 +74,11 @@ public class DrinksDaoImpl extends Dao implements DrinksDao{
         conn.close();
     }
 
+    /**
+     * 删除
+     * @param band
+     * @throws Exception
+     */
     @Override
     public void delDrinks(String band) throws Exception {
         Connection conn = getConnection();

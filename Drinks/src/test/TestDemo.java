@@ -23,11 +23,11 @@ public class TestDemo {
     @Test
     public void testAdd() throws Exception {
         Drink drink = new Drink();
-        drink.setBand("崂山可乐");
-        drink.setOrigin("青岛");
-        drink.setType("碳酸饮料");
-        drink.setCap("500ml");
-        drink.setPrice(2.4);
+        drink.setBand("茅台");
+        drink.setOrigin("贵州");
+        drink.setType("酒");
+        drink.setCap("700ml");
+        drink.setPrice(3000);
         drinksController.addDrinks(drink);
     }
 
