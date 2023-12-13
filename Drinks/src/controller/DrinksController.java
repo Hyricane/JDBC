@@ -34,7 +34,7 @@ public class DrinksController {
     public void addDrinks(Drink drink) throws Exception{
         drinksService = new DrinksServiceImpl();
         try{
-            drinksService = new DrinksServiceImpl();
+            drinksService.addDrinks(drink);
         }catch (Exception e){
             System.out.println(e.getMessage());
         }

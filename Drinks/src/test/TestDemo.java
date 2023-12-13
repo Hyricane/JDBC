@@ -35,15 +35,15 @@ public class TestDemo {
     public void testUpadte() throws Exception {
         Drink drink = new Drink();
         drink.setBand("百事");
-        drink.setCap("500ml");
-        drink.setPrice(3);
+        drink.setCap("1L");
+        drink.setPrice(6);
         drinksController.updateDrinks(drink);
     }
 
     @Test
     public void testDel() throws Exception{
         Drink drink = new Drink();
-        drink.setBand("美汁源");
+        drink.setBand("茅台");
         drinksController.delDrinks(drink.getBand());
     }
 }
